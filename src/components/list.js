@@ -1,14 +1,12 @@
 import React from "react";
+import Todo from "./todo";
 
 const List = ({ todos, deleteTodo }) => {
   return (
     <div>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.content}{" "}
-            <button onClick={() => deleteTodo(todo.id)}>X</button>
-          </li>
+          <Todo todo={todo} deleteTodo={deleteTodo} />
         ))}
       </ul>
     </div>

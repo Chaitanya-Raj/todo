@@ -11,7 +11,7 @@ const Input = ({ content, contentChange, handleSubmit }) => {
           value={content}
           onChange={contentChange}
         />
-        <button type="submit">Add</button>
+        {/* <button type="submit">Add</button> */}
       </form>
     </div>
   );

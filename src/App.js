@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <header>
         <span className="heading">This is what I'm gonna do today</span>
       </header>
@@ -36,6 +36,7 @@ function App() {
         />
         <List todos={todos} deleteTodo={deleteTodo} />
       </main>
+      <footer>created by Chaitanya Raj</footer>
     </div>
   );
 }
