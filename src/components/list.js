@@ -1,11 +1,23 @@
 import React from "react";
+import { ReactSortable } from "react-sortablejs";
 import Todo from "./todo";
 
-const List = ({ todos, deleteTodo, toggleComplete, clearCompleted }) => {
+const List = ({ todos, setTodos }) => {
   const hide = todos.length === 0 ? { display: "none" } : null;
+
+  const toggleComplete = (id) => {
+    let updatedTodo = todos.find((todo) => todo.id === id);
+    updatedTodo.completed = !updatedTodo.completed;
+    setTodos(todos.map((todo) => (todo.id === id ? updatedTodo : todo)));
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => id !== todo.id));
+  };
+
   return (
     <div>
-      <ul>
+      <ReactSortable list={todos} setList={setTodos} className="list">
         {todos.map((todo) => (
           <Todo
             todo={todo}
@@ -14,12 +26,17 @@ const List = ({ todos, deleteTodo, toggleComplete, clearCompleted }) => {
             key={todo.id}
           />
         ))}
-        <li id="clear" style={hide}>
-          <span className="clear-completed" onClick={clearCompleted}>
-            clear completed
-          </span>
-        </li>
-      </ul>
+      </ReactSortable>
+      <div className="list-item" id="clear" style={hide}>
+        <span
+          className="clear-completed"
+          onClick={() => {
+            setTodos(todos.filter((todo) => !todo.completed));
+          }}
+        >
+          clear completed
+        </span>
+      </div>
     </div>
   );
 };

@@ -13,10 +13,6 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  const clearCompleted = () => {
-    setTodos(todos.filter((todo) => !todo.completed));
-  };
-
   const contentChange = (e) => {
     setContent(e.target.value);
   };
@@ -31,16 +27,6 @@ function App() {
     setContent("");
   };
 
-  const toggleComplete = (id) => {
-    let updatedTodo = todos.find((todo) => todo.id === id);
-    updatedTodo.completed = !updatedTodo.completed;
-    setTodos(todos.map((todo) => (todo.id === id ? updatedTodo : todo)));
-  };
-
-  const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => id !== todo.id));
-  };
-
   return (
     <div className="container">
       <header>
@@ -53,12 +39,7 @@ function App() {
           contentChange={contentChange}
           handleSubmit={handleSubmit}
         />
-        <List
-          todos={todos}
-          deleteTodo={deleteTodo}
-          toggleComplete={toggleComplete}
-          clearCompleted={clearCompleted}
-        />
+        <List todos={todos} setTodos={setTodos} />
       </main>
       <footer>
         made with{" "}

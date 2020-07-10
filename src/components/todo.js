@@ -5,7 +5,7 @@ const Todo = ({ todo, deleteTodo, toggleComplete }) => {
   const strike = todo.completed ? "completed" : null;
 
   return (
-    <li className={bg}>
+    <div className={`list-item ${bg}`}>
       <button onClick={() => toggleComplete(todo.id)}>
         <span role="img" aria-label="mark-complete" id="mark-complete">
           &#9989;
@@ -17,7 +17,7 @@ const Todo = ({ todo, deleteTodo, toggleComplete }) => {
           &#10060;
         </span>
       </button>
-    </li>
+    </div>
   );
 };
 
