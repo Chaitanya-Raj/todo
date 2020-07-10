@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Chaitanya-Raj/todo/static/css/main.f865ad5d.chunk.css",
+    "main.js": "/Chaitanya-Raj/todo/static/js/main.eda8b76b.chunk.js",
+    "main.js.map": "/Chaitanya-Raj/todo/static/js/main.eda8b76b.chunk.js.map",
+    "runtime-main.js": "/Chaitanya-Raj/todo/static/js/runtime-main.fd376518.js",
+    "runtime-main.js.map": "/Chaitanya-Raj/todo/static/js/runtime-main.fd376518.js.map",
+    "static/js/2.5bd1538c.chunk.js": "/Chaitanya-Raj/todo/static/js/2.5bd1538c.chunk.js",
+    "static/js/2.5bd1538c.chunk.js.map": "/Chaitanya-Raj/todo/static/js/2.5bd1538c.chunk.js.map",
+    "index.html": "/Chaitanya-Raj/todo/index.html",
+    "precache-manifest.f67e3ffe36af4bad52dd57a0da9fff35.js": "/Chaitanya-Raj/todo/precache-manifest.f67e3ffe36af4bad52dd57a0da9fff35.js",
+    "service-worker.js": "/Chaitanya-Raj/todo/service-worker.js",
+    "static/css/main.f865ad5d.chunk.css.map": "/Chaitanya-Raj/todo/static/css/main.f865ad5d.chunk.css.map",
+    "static/js/2.5bd1538c.chunk.js.LICENSE.txt": "/Chaitanya-Raj/todo/static/js/2.5bd1538c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fd376518.js",
+    "static/js/2.5bd1538c.chunk.js",
+    "static/css/main.f865ad5d.chunk.css",
+    "static/js/main.eda8b76b.chunk.js"
+  ]
+}
