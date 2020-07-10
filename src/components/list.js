@@ -10,6 +10,7 @@ const List = ({ todos, deleteTodo, toggleComplete }) => {
             todo={todo}
             deleteTodo={deleteTodo}
             toggleComplete={toggleComplete}
+            key={todo.id}
           />
         ))}
       </ul>

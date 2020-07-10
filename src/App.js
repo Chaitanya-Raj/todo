@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "./components/input";
 import List from "./components/list";
 import "./App.css";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    localStorage.todos ? JSON.parse(localStorage.todos) : []
+  );
   const [content, setContent] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+    console.log(JSON.parse(localStorage.todos));
+  }, [todos]);
 
   const contentChange = (e) => {
     setContent(e.target.value);
@@ -13,10 +20,11 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTodos([
-      ...todos,
-      { content, id: Math.floor(Math.random() * 1000), completed: false },
-    ]);
+    if (content !== "")
+      setTodos([
+        ...todos,
+        { content, id: Math.floor(Math.random() * 1000), completed: false },
+      ]);
     setContent("");
   };
 
@@ -27,7 +35,6 @@ function App() {
   };
 
   const deleteTodo = (id) => {
-    console.log(id);
     setTodos(todos.filter((todo) => id !== todo.id));
   };
 
@@ -49,7 +56,13 @@ function App() {
           toggleComplete={toggleComplete}
         />
       </main>
-      <footer>created by Chaitanya Raj</footer>
+      <footer>
+        made with{" "}
+        <span role="img" aria-label="heart" id="heart">
+          &#10084;
+        </span>{" "}
+        by Chaitanya Raj
+      </footer>
     </div>
   );
 }
