@@ -11,11 +11,10 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
-    console.log(JSON.parse(localStorage.todos));
   }, [todos]);
 
-  const clearAll = () => {
-    setTodos([]);
+  const clearCompleted = () => {
+    setTodos(todos.filter((todo) => !todo.completed));
   };
 
   const contentChange = (e) => {
@@ -58,7 +57,7 @@ function App() {
           todos={todos}
           deleteTodo={deleteTodo}
           toggleComplete={toggleComplete}
-          clearAll={clearAll}
+          clearCompleted={clearCompleted}
         />
       </main>
       <footer>

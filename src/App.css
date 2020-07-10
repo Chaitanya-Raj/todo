@@ -3,6 +3,7 @@
 
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -62,19 +63,23 @@ li {
   align-items: center;
   max-height: fit-content;
   min-height: 8vh;
-  background: #eee;
+  word-wrap: break-word;
+  background: #f5f5f5;
   border: 1px solid #bbb;
   box-shadow: 3px 3px 3px #bbb;
 }
 
 #clear {
-  min-height: 1vh;
+  min-height: 5vh;
   display: flex;
+  background: #eee;
   justify-content: flex-end;
   font-family: "Roboto", sans-serif;
 }
 
-.clear-all {
+.clear-completed {
+  text-decoration: underline;
+  font-size: 1rem;
   color: #444;
   margin: 0 10px;
   cursor: pointer;
@@ -103,7 +108,11 @@ button {
 
 .completed {
   color: #999;
-  font-style: italic;
+  text-decoration: line-through;
+}
+
+.darken {
+  background: #eee;
 }
 
 #mark-delete {
@@ -140,19 +149,9 @@ footer {
 
   /* input  */
   input {
-    width: 65vw;
-    height: 5vh;
+    width: 80vw;
+    height: 7vh;
     font-size: 1rem;
-  }
-
-  #add-todo-button {
-    background: #fff;
-    border: 1px solid #bbb;
-    width: 15vw;
-    font-size: 1rem;
-    font-family: "Roboto", sans-serif;
-    display: block;
-    box-shadow: 3px 3px 3px #bbb;
   }
 
   /* list  */
@@ -167,6 +166,10 @@ footer {
 
   .content {
     font-size: 1.2rem;
+  }
+
+  .clear-completed {
+    font-size: 0.8rem;
   }
 
   /* footer  */
