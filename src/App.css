@@ -19,9 +19,10 @@ header {
 }
 
 .heading {
-  font-size: 2rem;
+  font-size: 3.5rem;
   color: palevioletred;
   font-weight: 700;
+  text-shadow: 3px 3px 3px #bbb;
 }
 
 /* main  */
@@ -41,6 +42,7 @@ input {
   border: 1px solid #bbb;
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
+  box-shadow: 3px 3px 3px #bbb;
 }
 
 #add-todo-button {
@@ -58,11 +60,11 @@ ul {
 li {
   display: flex;
   align-items: center;
-  padding: 15px 0;
-  max-height: 8vh;
-  min-height: fit-content;
+  max-height: fit-content;
+  min-height: 8vh;
   background: #eee;
   border: 1px solid #bbb;
+  box-shadow: 3px 3px 3px #bbb;
 }
 
 button {
@@ -76,7 +78,9 @@ button {
 }
 
 .content {
+  margin: 0;
   margin-right: auto;
+  padding: 5px 0;
   font-size: 1.5rem;
   color: #444;
   word-wrap: break-word;
@@ -97,6 +101,7 @@ footer {
   margin: 50px;
   text-align: center;
   color: #999;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -120,6 +125,7 @@ footer {
   /* input  */
   input {
     width: 65vw;
+    height: 5vh;
     font-size: 1rem;
   }
 
@@ -127,6 +133,8 @@ footer {
     background: #fff;
     border: 1px solid #bbb;
     width: 15vw;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
     display: block;
   }
 
@@ -135,7 +143,17 @@ footer {
     width: 80vw;
   }
 
+  li {
+    height: fit-content;
+    padding: 0;
+  }
+
   .content {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+
+  /* footer  */
+  footer {
+    font-size: 0.9rem;
   }
 }
