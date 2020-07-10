@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap");
 
 * {
-  font-family: "Caveat", cursive;
   box-sizing: border-box;
 }
 
@@ -19,10 +18,11 @@ header {
 }
 
 .heading {
+  font-family: "Caveat", cursive;
   font-size: 3.5rem;
   color: palevioletred;
   font-weight: 700;
-  text-shadow: 3px 3px 3px #bbb;
+  text-shadow: 1px 1px 3px #bbb;
 }
 
 /* main  */
@@ -67,6 +67,19 @@ li {
   box-shadow: 3px 3px 3px #bbb;
 }
 
+#clear {
+  min-height: 1vh;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Roboto", sans-serif;
+}
+
+.clear-all {
+  color: #444;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
 button {
   background: none;
   border: none;
@@ -85,10 +98,12 @@ button {
   color: #444;
   word-wrap: break-word;
   font-family: "Roboto", sans-serif;
+  font-style: italic;
 }
 
 .completed {
   color: #999;
+  font-style: italic;
 }
 
 #mark-delete {
@@ -98,6 +113,7 @@ button {
 
 /* footer  */
 footer {
+  font-family: "Caveat", cursive;
   margin: 50px;
   text-align: center;
   color: #999;
@@ -136,6 +152,7 @@ footer {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
     display: block;
+    box-shadow: 3px 3px 3px #bbb;
   }
 
   /* list  */

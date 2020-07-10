@@ -14,6 +14,10 @@ function App() {
     console.log(JSON.parse(localStorage.todos));
   }, [todos]);
 
+  const clearAll = () => {
+    setTodos([]);
+  };
+
   const contentChange = (e) => {
     setContent(e.target.value);
   };
@@ -54,6 +58,7 @@ function App() {
           todos={todos}
           deleteTodo={deleteTodo}
           toggleComplete={toggleComplete}
+          clearAll={clearAll}
         />
       </main>
       <footer>
