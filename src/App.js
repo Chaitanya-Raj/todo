@@ -13,8 +13,17 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTodos([...todos, { content, id: Math.floor(Math.random() * 1000) }]);
+    setTodos([
+      ...todos,
+      { content, id: Math.floor(Math.random() * 1000), completed: false },
+    ]);
     setContent("");
+  };
+
+  const toggleComplete = (id) => {
+    let updatedTodo = todos.find((todo) => todo.id === id);
+    updatedTodo.completed = !updatedTodo.completed;
+    setTodos(todos.map((todo) => (todo.id === id ? updatedTodo : todo)));
   };
 
   const deleteTodo = (id) => {
@@ -34,7 +43,11 @@ function App() {
           contentChange={contentChange}
           handleSubmit={handleSubmit}
         />
-        <List todos={todos} deleteTodo={deleteTodo} />
+        <List
+          todos={todos}
+          deleteTodo={deleteTodo}
+          toggleComplete={toggleComplete}
+        />
       </main>
       <footer>created by Chaitanya Raj</footer>
     </div>

@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Todo = ({ todo, deleteTodo }) => {
-  const [completed, setCompleted] = useState(false);
-
+const Todo = ({ todo, deleteTodo, toggleComplete }) => {
   const content = () => {
-    return completed ? (
+    return todo.completed ? (
       <p className="content completed">
         <strike>{todo.content}</strike>
       </p>
@@ -15,7 +13,7 @@ const Todo = ({ todo, deleteTodo }) => {
 
   return (
     <li key={todo.id}>
-      <button onClick={() => setCompleted(!completed)}>
+      <button onClick={() => toggleComplete(todo.id)}>
         <span role="img" aria-label="mark-complete" id="mark-complete">
           &#9989;
         </span>
