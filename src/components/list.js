@@ -16,9 +16,10 @@ const List = ({ todos, setTodos }) => {
   };
 
   const updateTodo = (e, id) => {
+    console.log(e.target.innerText, id);
     let updatedTodo = todos.find((todo) => todo.id === id);
     updatedTodo.content = e.target.innerText;
-    setTodos([...todos, updateTodo]);
+    setTodos(todos.map((todo) => (todo.id === id ? updatedTodo : todo)));
   };
 
   return (
