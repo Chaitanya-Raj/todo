@@ -15,6 +15,12 @@ const List = ({ todos, setTodos }) => {
     setTodos(todos.filter((todo) => id !== todo.id));
   };
 
+  const updateTodo = (e, id) => {
+    let updatedTodo = todos.find((todo) => todo.id === id);
+    updatedTodo.content = e.target.innerText;
+    setTodos([...todos, updateTodo]);
+  };
+
   return (
     <div>
       <ReactSortable list={todos} setList={setTodos} className="list">
@@ -22,6 +28,7 @@ const List = ({ todos, setTodos }) => {
           <Todo
             todo={todo}
             deleteTodo={deleteTodo}
+            updateTodo={updateTodo}
             toggleComplete={toggleComplete}
             key={todo.id}
           />

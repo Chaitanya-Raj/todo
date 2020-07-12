@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todo = ({ todo, deleteTodo, toggleComplete }) => {
+const Todo = ({ todo, deleteTodo, updateTodo, toggleComplete }) => {
   const bg = todo.completed ? "darken" : null;
   const strike = todo.completed ? "completed" : null;
 
@@ -11,7 +11,13 @@ const Todo = ({ todo, deleteTodo, toggleComplete }) => {
           &#9989;
         </span>
       </button>
-      <p className={`content ${strike}`}>{todo.content}</p>
+      <p
+        className={`content ${strike}`}
+        contentEditable="true"
+        onChange={(e) => updateTodo(e, todo.id)}
+      >
+        {todo.content}
+      </p>
       <button onClick={() => deleteTodo(todo.id)}>
         <span role="img" aria-label="mark-delete" id="mark-delete">
           &#10060;
