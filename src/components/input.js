@@ -7,7 +7,7 @@ const Input = ({ content, contentChange, handleSubmit }) => {
         <input
           type="text"
           name="content"
-          id="content"
+          class="content"
           value={content}
           onChange={contentChange}
         />
