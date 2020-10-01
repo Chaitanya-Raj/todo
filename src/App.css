@@ -4,6 +4,14 @@
 * {
   box-sizing: border-box;
   outline: none;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Webkit based browsers */
+*::-webkit-scrollbar {
+  display: none;
 }
 
 body {
